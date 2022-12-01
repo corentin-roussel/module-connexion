@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $host = 'localhost';
 $name = 'moduleconnexion';
@@ -13,8 +14,8 @@ if($mysqli -> connect_errno) {
     exit();
 } // if connection error echo une phrase et exit
 
-$sql = ("SELECT * FROM `utilisateurs`"); // Stocké dans une variable selectionné  tous les champ pour utilisateurs
+$sql = ("SELECT prenom, nom, password, login FROM `utilisateurs`"); // Stocké dans une variable selectionné  tous les champ pour utilisateurs
 $result = $mysqli -> query($sql); // Stocké le résultat dans la variable result = a la connexion a la base de données et on fetch la variable sql
+$table = $result -> fetch_all();
 
-var_dump($result);
 ?>

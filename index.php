@@ -1,5 +1,7 @@
 <?php
-    include '_db/connect.php'
+
+    include '_db/connect.php';
+  
 ?>
 
 <!DOCTYPE html>
@@ -13,15 +15,15 @@
 </head>
 <body>
     <header>
-        <?php include '_include/header.php'?>
+        <?php include '_include/header.php'; ?>
     </header>
     <main>
         <article class="main-index">
-            <h1 class="title">Bonjour tout le monde</h1>
+            <h1 class="title">Bonjour <?php if(isset($_SESSION['id'])) {echo $_SESSION['login'];} else{ echo "tout le monde";} ?></h1>
         </article>
     </main>
     <footer>
-
+        <?php include '_include/footer.php'; ?>
     </footer>
 </body>
 </html>

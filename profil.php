@@ -1,5 +1,6 @@
 <?php
-    include '_db/connect.php'
+    include '_db/connect.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
     </header>
     <main>
         <article class="main-index">
-            <h1 class="title">Bonjour utilisateur</h1>
+            <h1 class="title">Bonjour <?php if(isset($_SESSION['login'])) {echo $_POST['login'];} ?></h1>
         </article>
     </main>
     <footer>
