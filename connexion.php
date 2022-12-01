@@ -85,6 +85,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://kit.fontawesome.com/7e3324cff8.js" crossorigin="anonymous"></script>
     <title>Connexion</title>
 </head>
 <body>
@@ -92,15 +93,16 @@
         <?php include '_include/header.php'?>
     </header>
     <main>
+        <h1 class="title">Connexion</h1>
         <article class="form-flex">
             <form class="form" action="" method="POST">
                 <?php if(isset($err_login)) {echo $err_login;} ?>
                 <label class="space" for="login">Login</label>
-                <input class="space" type="text" name ="login"  value="<?php if(isset($login)) {echo $login;} ?>" placeholder="Entrez votre login" >
+                <input class="space" type="text" name ="login"  value="<?php if(isset($login)) {echo $login;} ?>" placeholder="Entrez votre login" required>
 
                 <?php if(isset($err_password)) {echo $err_password;} ?>
                 <label class="space" for="password">Mot de passe</label>
-                <input class="space" type="password" name ="password"  placeholder="Entrez votre mot de passe" >
+                <input class="space" type="password" name ="password"  placeholder="Entrez votre mot de passe" required>
 
                 <input class="button" type="submit"  name="connexion" value="Connexion">
             </form>
