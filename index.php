@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/7e3324cff8.js" crossorigin="anonymous"></script>
     <title>Accueil</title>
 </head>
-<body>
+<body class="bg-img">
     <header>
         <?php include '_include/header.php'; ?>
     </header>

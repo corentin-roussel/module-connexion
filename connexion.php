@@ -17,9 +17,6 @@
             $login = htmlspecialchars(trim($login));
             $password = htmlspecialchars(trim($password));
 
-            echo $login;
-            echo $password;
-
             if(empty($login)) {
                 $valid = FALSE;
                 $err_login = "Ce champ ne peut pas être vide";
@@ -35,12 +32,11 @@
                 $req_user = mysqli_query($mysqli, $user);
                 $users = mysqli_fetch_array($req_user, MYSQLI_ASSOC);
                 
-                var_dump($users['password']);
 
                 if(isset($users['password'])) {
                     if(!password_verify($password, $users['password'])) {
                         $valid = FALSE;
-                        echo "La combinaison du mot de passe et du login est incorrecte";
+                        $err_login = "La combinaison du mot de passe et du login est incorrecte";
                     }
                 }
                 else {
@@ -88,12 +84,14 @@
     <script src="https://kit.fontawesome.com/7e3324cff8.js" crossorigin="anonymous"></script>
     <title>Connexion</title>
 </head>
-<body>
+<body class="bg-img">
     <header>
         <?php include '_include/header.php'?>
     </header>
     <main>
-        <h1 class="title">Connexion</h1>
+        <article class="main-index">
+            <h1 class="title">Connectez vous</h1>
+        </article>
         <article class="form-flex">
             <form class="form" action="" method="POST">
                 <?php if(isset($err_login)) {echo $err_login;} ?>
@@ -103,6 +101,8 @@
                 <?php if(isset($err_password)) {echo $err_password;} ?>
                 <label class="space" for="password">Mot de passe</label>
                 <input class="space" type="password" name ="password"  placeholder="Entrez votre mot de passe" required>
+
+                <p>Password admin = Admin.123</p>
 
                 <input class="button" type="submit"  name="connexion" value="Connexion">
             </form>

@@ -33,14 +33,13 @@
             
             else if(grapheme_strlen($login) > 25) {
                 $valid = FALSE;
-                $err_login = "Le contient trop de caractéres.";
+                $err_login = "Le login contient trop de caractéres.";
             }
             
             else {
                 $user = ("SELECT login FROM utilisateurs WHERE login = '$login'");
                 $verif = mysqli_query($mysqli, $user);
 
-                var_dump($verif);
                 
                 if(mysqli_num_rows($verif) > 0) {
                     $valid = FALSE;
@@ -55,18 +54,16 @@
                 $valid = FALSE;
                 $err_prenom = "Ce champ ne peut pas être vide";
             }else {
-                $req = $mysqli->prepare("SELECT * FROM utilisateurs where prenom = ?");
-                $req->execute(array($prenom));
-                $req = $req->fetch();
+                $user = ("SELECT * FROM utilisateurs WHERE prenom = '$prenom'");
+                $verif = mysqli_query($mysqli, $user);
             }
     
             if(empty($nom)) { 
                 $valid = FALSE;
                 $err_nom = "Ce champ ne peut pas être vide";
             }else {
-                $req = $mysqli->prepare("SELECT * FROM utilisateurs where nom = ?");
-                $req->execute(array($nom));
-                $req = $req->fetch();
+                $user = ("SELECT * FROM utilisateurs WHERE nom = '$nom'");
+                $verif = mysqli_query($mysqli, $user);
             }
     
             if(empty($password)) {
@@ -87,9 +84,8 @@
 
             }
             else {
-                $req = $mysqli->prepare("SELECT * FROM utilisateurs where password = ?");
-                $req->execute(array($password));
-                $req = $req->fetch();
+                $user = ("SELECT * FROM utilisateurs WHERE prenom = '$prenom'");
+                $verif = mysqli_query($mysqli, $user);
             }    
             
             if($valid) {
@@ -100,8 +96,6 @@
 
                 header("Location: connexion.php");
                 
-            }else {
-                echo 'nok';
             }
         }
     }
@@ -117,7 +111,7 @@
     <script src="https://kit.fontawesome.com/7e3324cff8.js" crossorigin="anonymous"></script>
     <title>Inscription</title>
 </head>
-<body>
+<body class="bg-img">
     <header>
         <?php include '_include/header.php'?>
     </header>
