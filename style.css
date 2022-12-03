@@ -2,17 +2,26 @@ body {
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-main {
-    width: 100vw;
-    height: 85vh;
+header {
+    min-height: 10vh;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 footer {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-top: auto;
+    min-height: 10vh;
 }
 
 .bg-img {
@@ -34,13 +43,14 @@ footer {
 .form-flex {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: center;
     border: 2px solid black;
     border-radius: 25px;
     padding: 1rem;
     width: fit-content;
-    backdrop-filter: blur(10px);
+    flex-direction: column;
 }
 
 
@@ -48,21 +58,25 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #000000;
+    background-color: #094e7c;
     width: 100vw;
-    height: 50px;
+    height: 100px;
     margin-bottom: 1rem;
 }
 
 .link {
     text-decoration: none;
     color: #FFFFFF;
+    font-family: 'Neuton', sans-serif;
+    font-size: 3rem;
 }
 
 .space {
     margin: 0.5rem;
     margin-right: auto;
     margin-left: auto;
+    font-family: 'Nunito', sans-serif;
+    font-size: 3rem;
 }
 
 .main-index {
@@ -71,19 +85,29 @@ footer {
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 4rem;
+    font-family: 'Nunito', sans-serif;
 }
 
 .button {
     border-radius: 10px;
     width: 10rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+}
 
+.input {
+    border-radius: 25px;
 }
 
 .fa-github {
     color: #000000;
     font-size: 5rem;
+}
 
+.fa-github:hover {
+    color: #FFFFFF;
+    transition: 0.5s;
 }
 
 .flex-table {

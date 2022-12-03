@@ -104,11 +104,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://kit.fontawesome.com/7e3324cff8.js" crossorigin="anonymous"></script>
+    <?php include '_include/head.php' ?>
     <title>Inscription</title>
 </head>
 <body class="bg-img">
@@ -117,25 +113,26 @@
     </header>
     <main>
         <article class="form-flex">
+            <h1 class="title main-index">Inscrivez-vous</h1>
             <form class="form" action="" method="POST">
                     <?php if(isset($err_login)) {echo '<div>' . "$err_login" . '</div>' ;} ?>
                     <label class="space" for="login">Login</label>
-                    <input class="space" type="text" name ="login" value="<?php if(isset($login)) {echo "$login";} ?>" placeholder="Entrez votre login" required>
+                    <input class="space input" type="text" name ="login" value="<?php if(isset($login)) {echo "$login";} ?>" placeholder="Entrez votre login" required>
                     
                     <?php if(isset($err_prenom)) {echo '<div>' . "$err_prenom" . '</div>' ;} ?>
                     <label class="space" for="prenom">Prenom</label>
-                    <input class="space" type="text" name ="prenom"  value="<?php if(isset($prenom)) {echo "$prenom";} ?>" placeholder="Entrez votre prenom" required>
+                    <input class="space input" type="text" name ="prenom"  value="<?php if(isset($prenom)) {echo "$prenom";} ?>" placeholder="Entrez votre prenom" required>
 
                     <?php if(isset($err_nom)) {echo '<div>' . "$err_nom" . '</div>' ;} ?>
                     <label class="space" for="nom">Nom</label>
-                    <input class="space" type="text" name ="nom"  value="<?php if(isset($nom)) {echo "$nom";} ?>" placeholder="Entrez votre nom" required>
+                    <input class="space input" type="text" name ="nom"  value="<?php if(isset($nom)) {echo "$nom";} ?>" placeholder="Entrez votre nom" required>
                     
                     <?php if(isset($err_password)) {echo '<div>' . "$err_password" . '</div>' ;} ?>
                     <label class="space" for="password">Mot de passe</label>
-                    <input class="space" type="password" name ="password"  value="" placeholder="Entrez votre mot de passe" required>
+                    <input class="space input" type="password" name ="password"  value="" placeholder="Entrez votre mot de passe" required>
 
                     <label class="space" for="confpassword">Confirmation mot de passe</label>
-                    <input class="space" type="password" name ="confpassword"  value="" placeholder="Confirmez votre mot de passe" required>
+                    <input class="space input" type="password" name ="confpassword"  value="" placeholder="Confirmez votre mot de passe" required>
 
                     <input class="button" type="submit" name="inscription"  value="Connexion">
             </form>

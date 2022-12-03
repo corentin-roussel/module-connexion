@@ -77,11 +77,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://kit.fontawesome.com/7e3324cff8.js" crossorigin="anonymous"></script>
+    <?php include '_include/head.php' ?>
     <title>Connexion</title>
 </head>
 <body class="bg-img">
@@ -89,18 +85,16 @@
         <?php include '_include/header.php'?>
     </header>
     <main>
-        <article class="main-index">
-            <h1 class="title">Connectez vous</h1>
-        </article>
         <article class="form-flex">
+            <h1 class="title main-index">Connectez vous</h1>
             <form class="form" action="" method="POST">
                 <?php if(isset($err_login)) {echo $err_login;} ?>
                 <label class="space" for="login">Login</label>
-                <input class="space" type="text" name ="login"  value="<?php if(isset($login)) {echo $login;} ?>" placeholder="Entrez votre login" required>
+                <input class="space input" type="text" name ="login"  value="<?php if(isset($login)) {echo $login;} ?>" placeholder="Entrez votre login" required>
 
                 <?php if(isset($err_password)) {echo $err_password;} ?>
                 <label class="space" for="password">Mot de passe</label>
-                <input class="space" type="password" name ="password"  placeholder="Entrez votre mot de passe" required>
+                <input class="space input" type="password" name ="password"  placeholder="Entrez votre mot de passe" required>
 
                 <p>Password admin = Admin.123</p>
 
