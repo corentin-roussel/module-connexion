@@ -1,8 +1,8 @@
 <?php 
-    session_start();
+    session_start(); //initialisation de la sessionen cours
 
-    session_destroy();
+    session_destroy(); //destruction de la session
 
-    header("Location: index.php");
+    header("Location: index.php"); // redirection vers index.php
     exit;
 ?>

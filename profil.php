@@ -1,5 +1,5 @@
 <?php
-    include '_db/connect.php';
+    require_once '_db/connect.php';
 
     $valid = (boolean) TRUE;
 

@@ -2,14 +2,14 @@
     include('_db/connect.php');
 
 
-    if(isset($_SESSION['id'])) {
-        header("Location: index.php");
+    if(isset($_SESSION['id'])) { //si on a quelquechose dans $_SESSION['id']
+        header("Location: index.php");// redirige vers index.php
         exit;
     }
 
-    $valid = (boolean) TRUE;
+    $valid = (boolean) TRUE; //initialisation d'un booleen
 
-    $regex = "^\S*(?=\S{5,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$^";
+    $regex = "^\S*(?=\S{5,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$^"; //intialisation de la regex
 
     if(!empty($_POST)) {
         extract($_POST);

@@ -14,7 +14,7 @@
     </header>
     <main>
         <article class="main-index">
-            <h1 class="title">Bonjour <?php if(isset($_SESSION['id'])) {echo $_SESSION['login'];} else{ echo "tout le monde";} ?></h1>
+            <h1 class="title">Bonjour <?php if(isset($_SESSION['id'])) {echo $_SESSION['login'];} else{ echo "tout le monde";}  // affichage conditionnelle si il y a quelqeuchose dans session['id'] affiche $_SESSION['login'] sinon affiche tout le monde?></h1>
         </article>
     </main>
     <footer>
